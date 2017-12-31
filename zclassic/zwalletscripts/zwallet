@@ -1,0 +1,9 @@
+#!/bin/bash
+
+zwalletstart
+
+if [ ! "$(docker exec -it zwallet ps a | egrep '[z]cashd')" ]; then
+  zwalletnode "bg"
+fi
+
+docker exec -it zwallet zcash-cli $1 $2 $3 $4 $5 $6

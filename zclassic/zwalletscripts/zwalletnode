@@ -1,0 +1,11 @@
+USER="$(whoami)"
+
+if [ "$(docker exec -it zwallet ps a | egrep '[z]cashd')" ]; then
+  docker exec -it zwallet pkill zcashd
+fi
+
+if [ "$1" ]; then
+  docker exec --user $USER -d zwallet zcashd
+else
+  docker exec --user $USER -it zwallet zcashd
+fi

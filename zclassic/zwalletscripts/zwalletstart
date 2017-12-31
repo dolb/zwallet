@@ -1,0 +1,7 @@
+if [ ! "$(docker ps | grep zwallet)" ]; then
+  echo "starting zwallet"
+  docker start zwallet
+  echo "zwallet started"
+else
+  echo "zwallet container running"
+fi

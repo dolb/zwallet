@@ -1,0 +1,24 @@
+from ubuntu:16.04
+
+run apt-get update
+run apt-get install -y git \
+      build-essential pkg-config libc6-dev m4 g++-multilib \
+      autoconf libtool ncurses-dev unzip git python mc \
+      zlib1g-dev wget bsdmainutils automake \
+      nginx-full mc net-tools
+
+RUN adduser --disabled-password --gecos "" ___ME___
+RUN adduser ___ME___ sudo
+
+
+COPY init-wallet.sh /home/___ME___/
+RUN chmod +x /home/___ME___/init-wallet.sh
+
+USER ___ME___
+
+ENV HOME="/home/___ME___"
+
+ENV PATH="/home/___ME___/git/src:${PATH}"
+
+
+CMD [ "/bin/bash" ]
