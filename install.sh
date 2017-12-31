@@ -27,6 +27,7 @@ cd $DIR
 mkdir zclassic/.zclassic &>/dev/null
 mkdir zclassic/.zcash-params &>/dev/null
 mkdir zclassic/git &>/dev/null
+mkdir zclassic/backup &>/dev/null
 
 
 ./docker-rebuild-and-restart.sh $ME
