@@ -3,3 +3,4 @@ Dockerfile
 zclassic/.zclassic
 zclassic/.zcash-params
 zclassic/git
+zclassic/backup

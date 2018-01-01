@@ -1,5 +1,7 @@
 USER="$(whoami)"
 
+zwalletstart
+
 if [ "$(docker exec -it zwallet ps a | egrep '[z]cashd')" ]; then
   docker exec -it zwallet pkill zcashd
 fi
