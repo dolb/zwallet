@@ -2,7 +2,9 @@
 
 zwalletstart
 
-if [ ! "$(docker exec -it zwallet ps a | egrep '[z]cashd')" ]; then
+tmp="$(docker exec -it zwallet ps aux)"
+
+if [ ! "$(echo $tmp | egrep '[z]cashd')" ]; then
   zwalletnode "bg"
 fi
 
