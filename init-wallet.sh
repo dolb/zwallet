@@ -61,5 +61,6 @@ echo "addnode=67.215.14.195" >> $HOME/.zclassic/zclassic.conf
 
 echo "rpcuser=zclassic" >> $HOME/.zclassic/zclassic.conf
 echo "rpcpassword=`head -c 32 /dev/urandom | base64`" >> $HOME/.zclassic/zclassic.conf
+echo "txindex=1" >> $HOME/.zclassic/zclassic.conf
 
 echo "exportdir=$HOME/backup" >> $HOME/.zclassic/zclassic.conf

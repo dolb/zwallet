@@ -1,11 +1,15 @@
 from ubuntu:16.04
 
 run apt-get update
-run apt-get install -y git \
+run apt-get install -y git software-properties-common \
       build-essential pkg-config libc6-dev m4 g++-multilib \
       autoconf libtool ncurses-dev unzip git python mc \
       zlib1g-dev wget bsdmainutils automake \
       nginx-full mc net-tools
+
+run add-apt-repository -y ppa:jonathonf/python-3.6
+run apt-get update
+run apt-get install -y python3.6
 
 RUN adduser --disabled-password --gecos "" ___ME___
 RUN adduser ___ME___ sudo
