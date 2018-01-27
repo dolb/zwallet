@@ -64,3 +64,9 @@ echo "rpcpassword=`head -c 32 /dev/urandom | base64`" >> $HOME/.zclassic/zclassi
 echo "txindex=1" >> $HOME/.zclassic/zclassic.conf
 
 echo "exportdir=$HOME/backup" >> $HOME/.zclassic/zclassic.conf
+
+
+
+echo "FULLNODE READY, pulling electrumx to $HOME/electrumx"
+
+git clone https://github.com/BTCP-community/electrumx $HOME/electrumx

@@ -7,7 +7,7 @@ if [ "$(command -v docker)" ]; then
   echo "Installing wallet on the current docker host"
 else
   echo "docker deamon is required tu run this container - installing"
-  
+
   curl -L https://github.com/docker/machine/releases/download/v0.13.0/docker-machine-`uname -s`-`uname -m` >/tmp/docker-machine &&
   chmod +x /tmp/docker-machine &&
   sudo cp /tmp/docker-machine /usr/local/bin/docker-machine
@@ -25,6 +25,7 @@ mkdir zclassic/.zclassic &>/dev/null
 mkdir zclassic/.zcash-params &>/dev/null
 mkdir zclassic/git &>/dev/null
 mkdir zclassic/backup &>/dev/null
+mkdir zclassic/electrumx &>/dev/null
 
 
 ./docker-rebuild-and-restart.sh $ME

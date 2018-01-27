@@ -18,6 +18,7 @@ docker run --user $USER \
     -v $FULLPTH/zclassic/.zcash-params:/home/$USER/.zcash-params \
     -v $FULLPTH/zclassic/.zclassic:/home/$USER/.zclassic \
     -v $FULLPTH/zclassic/backup:/home/$USER/backup \
+    -v $FULLPTH/zclassic/electrumx:/home/$USER/electrumx \
     --name=zwallet \
 	-d zwallet /bin/bash -c "while true; do sleep 1; done"
 #docker exec --user root -it zwallet chown $USER:$USER /home/$USER/

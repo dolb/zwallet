@@ -9,11 +9,13 @@ run apt-get install -y git software-properties-common \
 
 run add-apt-repository -y ppa:jonathonf/python-3.6
 run apt-get update
-run apt-get install -y python3.6
+run apt-get install -y python3.6 python3-pip
 
 RUN adduser --disabled-password --gecos "" ___ME___
 RUN adduser ___ME___ sudo
 
+RUN python3.6 -m pip install --upgrade pip
+RUN python3.6 -m pip install aiohttp pylru plyvel
 
 COPY init-wallet.sh /home/___ME___/
 RUN chmod +x /home/___ME___/init-wallet.sh
